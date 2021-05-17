@@ -1,4 +1,5 @@
 import Link from "next/link";
+import CommonButton from "../button";
 
 const Footer = () => {
   const logoItem = [
@@ -29,14 +30,9 @@ const Footer = () => {
   return (
     <>
       <div className="md:flex items-center mt-12 md:mt-28">
-        <Link href="/">
-          <a
-            title="Get a Demo"
-            className="rounded px-6 inline-block bg-orange text-white py-3 md:mr-6 whitespace-nowrap"
-          >
-            Get a Demo
-          </a>
-        </Link>
+        <div className="md:mr-6">
+          <CommonButton title="Get a Demo" background="orange" color="white" />
+        </div>
         <p className="text-medium text-base2 leading-6 mt-8 md:mt-0">
           Join hundreds of innovative companies & simplify your SOC 2
         </p>

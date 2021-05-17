@@ -1,8 +1,9 @@
 import Head from "next/head";
 import Image from "next/image";
-import Link from "next/link";
 import Header from "./components/header";
 import Footer from "./components/footer";
+import HeadLine from "./components/headline";
+import SubTitle from "./components/subtitle";
 
 export default function Home() {
   return (
@@ -25,12 +26,8 @@ export default function Home() {
             />
           </div>
           <div className="mt-8 md:mt-0 flex-auto text-center md:text-left">
-            <h1 className="text-dark text-7xl2 md:text-8xl2 font-extrabold leading-68 md:leading-88">
-              SOC 2
-            </h1>
-            <h2 className="text-dark font-extrabold text-base3 md:text-4xl2 leading-34 md:leading-44">
-              for fast moving SaaS companies
-            </h2>
+            <HeadLine title="SOC 2" />
+            <SubTitle title="for fast moving SaaS companies" />
             <p className="text-base2 leading-6 py-4 md:py-2 text-medium">
               Use Sprinto to obtain SOC 2 compliance, close enterprise deals
               faster, and pass vendor security assessments with ease.
