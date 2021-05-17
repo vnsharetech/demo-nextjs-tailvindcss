@@ -1,14 +1,10 @@
 import Head from "next/head";
 import Image from "next/image";
-import { useState } from "react";
-import styles from "../styles/Home.module.css";
+import Link from "next/link";
+import Header from "./components/header";
+import Footer from "./components/footer";
 
 export default function Home() {
-  const [menu, setMenu] = useState(false);
-  const showMenu = () => {
-    console.log(menu);
-    setMenu(!menu);
-  };
   return (
     <div className="container mx-auto lg:px-8 md:px-6 px-4">
       <Head>
@@ -18,59 +14,7 @@ export default function Home() {
       </Head>
 
       <main>
-        <div className="md:flex mt-10 justify-between relative">
-          <div>
-            <img src="/logo-sprinto.svg" alt="Picture of the author" />
-          </div>
-          <div
-            className="md:hidden cursor-pointer absolute top-0 right-0"
-            onClick={showMenu}
-          >
-            <img src="/nav.svg" />
-          </div>
-          <ul
-            className={`hidden mt-4 md:mt-0 md:flex ${
-              menu ? styles.showmneu : ""
-            }`}
-          >
-            <li className="md:ml-2">
-              <a
-                href="#"
-                title="Why Sprinto"
-                className="px-2 py-1.5 text-navigation font-base leading-6 block"
-              >
-                Why Sprinto
-              </a>
-            </li>
-            <li className="md:ml-2">
-              <a
-                href="#"
-                title="About"
-                className="px-2 py-1.5 text-navigation font-base leading-6 block"
-              >
-                About
-              </a>
-            </li>
-            <li className="md:ml-2">
-              <a
-                href="#"
-                title="Sign in"
-                className="px-2 py-1.5 text-navigation font-base leading-6 block"
-              >
-                Sign in
-              </a>
-            </li>
-            <li className="md:ml-2">
-              <a
-                href="#"
-                title="Get a Demo"
-                className="px-2 py-1.5 bg-orange-light rounded-md text-orange font-base leading-6 block"
-              >
-                Get a Demo
-              </a>
-            </li>
-          </ul>
-        </div>
+        <Header />
         <div className="mt-12 md:mt-20 md:flex flex-row-reverse mb-10">
           <div>
             <Image
@@ -91,34 +35,10 @@ export default function Home() {
               Use Sprinto to obtain SOC 2 compliance, close enterprise deals
               faster, and pass vendor security assessments with ease.
             </p>
-            <div className="m:flex items-center mt-12 md:mt-28">
-              <a
-                href="#"
-                title="Get a Demo"
-                className="rounded px-6 inline-block bg-orange text-white py-3 md:mr-6 whitespace-nowrap"
-              >
-                Get a Demo
-              </a>
-              <p className="text-medium text-base2 leading-6 mt-8 md:mt-0">
-                Join hundreds of innovative companies & simplify your SOC 2
-              </p>
-            </div>
-            <div className="flex mt-4 justify-between md:justify-start">
-              <div className="mr-6">
-                <img src="/footer-logo1.png" className="max-w-full" />
-              </div>
-              <div className="mr-6">
-                <img src="/footer-logo2.png" className="max-w-full" />
-              </div>
-              <div>
-                <img src="/footer-logo3.png" className="max-w-full" />
-              </div>
-            </div>
+            <Footer />
           </div>
         </div>
       </main>
-
-      <footer></footer>
     </div>
   );
 }
